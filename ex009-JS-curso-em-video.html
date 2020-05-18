@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex007</title>
+
+    <style>
+        body {
+            background: #606060;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        button {
+            padding: 15px;
+            margin: 8px;
+            font-size: 20px;
+            font-weight: bolder;
+            border-radius: 10px;
+            box-shadow: 2px 2px 4px rgb(131, 85, 93);
+        }
+
+        div {
+            font-size: 18pt;
+            margin: 5px;
+            padding: 8px;
+            width: 600px;
+            border-radius: 10px;
+            background: white;
+        }
+
+        h2 {
+            margin: 5px;
+            padding: 8px;
+            width: 600px;
+            border-radius: 10px;
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Reajuste Salarial</h1>
+
+    <button onclick="acao()">Reajustar Salario</button>
+
+    <div class="title2">Clique no botão acima para iniciar</div>
+
+    <div class="resultado">Resultado</div>
+
+    <script>
+        var btn = document.querySelector('button')
+        var divi = document.querySelector('.resultado')
+        var title2 = document.querySelector('.title2')
+
+        function acao() {
+            var pega_nome = prompt('Qual o nome do funcionário?')
+            var pega_salario = prompt(`Qual é o Salário do(a) ${pega_nome}`).replace(",", ".")
+            var reajuste = prompt(`O salário do ${pega_nome} vai ser reajustado em qual porcentagem?`).replace(",", ".")
+
+            var con_salario = Number(pega_salario).toFixed(2)
+            var calculo_1 = Number(reajuste) / 100
+
+            var calculo_2 = Number(calculo_1 * con_salario).toFixed(2)
+            var sum = Number(calculo_2) + Number(con_salario)
+            var calculo_final = Number(sum).toFixed(2)
+
+            title2.innerHTML = `<strong>${pega_nome} recebeu um aumento salarial!</strong>`
+
+            divi.innerHTML = `O salário atual era R$:${con_salario} <br>
+            Com um aumento de ${reajuste}%, o salário vai aumentar R$:${calculo_2}, no próximo mês.<br> 
+            E a partir daí, ${pega_nome} vai passar a ganhar R$:${calculo_final}. `
+
+        }
+    </script>
+</body>
+
+</html>

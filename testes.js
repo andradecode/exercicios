@@ -1,8 +1,18 @@
-var n1 = ('100').replace(",",".")
-var n2 = n1
+var pega_salario = '1885.90'
+var reajuste = '10'
 
-var n3 = n2 * 0.1
+var con_salario = Number(pega_salario).toFixed(2) 
+var calculo_1 = Number(reajuste) / 100
 
-console.log(n2)
-console.log(n3)
-// Number(n1).toLocaleString('pt-br', {style:'currency', currency: 'BRL'})
+var calculo_2 = Number(calculo_1 * con_salario).toFixed(2)
+var sum = Number(calculo_2) + Number(con_salario)
+
+var calculo_final = Number(sum).toFixed(2)
+
+console.log('calculo1- ' + calculo_1)
+
+console.log('calculo2- ' + con_salario)
+
+console.log('calculo3- ' + calculo_2)
+
+console.log('calculo4- ' + calculo_final)
