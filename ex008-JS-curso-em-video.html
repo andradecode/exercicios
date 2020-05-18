@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex007</title>
+
+    <style>
+        body {
+            background: #606060;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        button {
+            padding: 15px;
+            margin: 8px;
+            font-size: 20px;
+            font-weight: bolder;
+            border-radius: 10px;
+            box-shadow: 2px 2px 4px rgb(131, 85, 93);
+        }
+
+        div {
+            font-size: 18pt;
+            margin: 5px;
+            padding: 8px;
+            width: 600px;
+            border-radius: 10px;
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Desafio desconto de 10%</h1>
+
+    <button onclick="acao()">Desconto de 10%</button>
+
+    <div>Clique no botão acima para iniciar</div>
+
+    <script>
+        var btn = document.querySelector('button')
+        var divi = document.querySelector('div')
+
+        function acao() {
+            var produto = prompt('Qual é o produto que você está comprando?')
+            var valorInicial = prompt(`Qual é o preço de ${produto}?`).replace(",",".")
+            var valorD = Number(valorInicial * 0.1).toFixed(2)
+            var valorFinal = valorInicial - valorD
+
+            divi.innerHTML = `O preço original era R$: ${valorInicial}<br><br> 
+            Você acaba de ganhar R$: ${valorD} de desconto (-10%) <br><br>
+            No fim, você vai pagar R$: ${valorFinal} no produto ${produto}`
+        }
+
+    </script>
+</body>
+
+</html>
