@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex007</title>
+    <style>
+        body {
+            background: #606060;
+        }
+
+        button {
+            padding: 10px;
+            margin: 8px;
+            font-size: 15px;
+        }
+
+        div {
+            font-size: 18pt;
+            margin: 5px;
+            padding: 2px;
+            width: 350px;
+            border-radius: 10px;
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Conversor de R$ &rarr; US$</h1>
+
+    <button onclick="conversor()">Converter</button>
+
+    <div>Clique no botão acima para iniciar</div>
+
+    <script>
+        var cotaDolar = prompt('Qual a cotação do dólar agora?').replace(",", ".")
+        var con = Number(cotaDolar).toFixed(2)
+
+        var btn = document.querySelector('button')
+        var text1 = document.querySelector('div')
+
+        function conversor() {
+            var reais = prompt('Quantos R$ você tem na carteira?').replace(",", ".")
+            var con2 = Number(reais).toFixed(2)
+
+            var sum = (con2 / con).toFixed(2).replace(".", ",")
+
+            text1.innerHTML = `Você pode ter ${sum} dólar`
+        }
+    </script>
+</body>
+
+</html>
