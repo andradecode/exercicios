@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex006</title>
+</head>
+<style>
+    body {
+        background: #606060;
+    }
+
+    button {
+        padding: 10px;
+        margin: 8px;
+        font-size: 15px;
+    }
+
+    div {
+        font-size: 25px;
+        margin: 5px;
+        padding: 2px;
+        width: 180px;
+        border-radius: 10px;
+        background: white;
+    }
+</style>
+
+<body>
+    <h1>Conversor de Temperatura</h1>
+
+    <button onclick="acao()">Converter</button>
+
+    <h2>A temperatura de (graus), corresponde a...</h2>
+
+    <section>
+        <div class="result1">resultado 1</div>
+        <div class="result2">resultado 2</div>
+    </section>
+
+    <script>
+        // Fórmula C para F >> (0 °C × 9/5) + 32 = 32 °F
+        // Fórumula de C para K >> 0 °C + 273,15 = 273,15 K
+        var btn = document.querySelector('button')
+        var r1 = document.querySelector('.result1')
+        var r2 = document.querySelector('.result2')
+        var text1 = document.querySelector('h2')
+        
+        function acao() {
+            var C = Number(prompt('Digite o valor em Celsius'))
+            var F = (C * 9 / 5) + 32
+            var K = C + 273.15
+            text1.innerHTML = `A temperatura de ${C}, corresponde a...`
+            r1.innerHTML = `${F}° Fahrenheit`
+            r2.innerHTML = `${K}° Kelvin`
+        }
+
+
+    </script>
+</body>
+
+</html>

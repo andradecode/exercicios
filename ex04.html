@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex004</title>
+
+    <style>
+        body {
+            background: #606060;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        button {
+            height: 40px;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 2px 2px 4px blue;
+            background: cornflowerblue;
+            margin: 20px;
+        }
+
+        div {
+            position: relative;
+            border: 2px dashed rgb(69, 69, 160);
+            width: 400px;
+            margin: auto;
+            padding: 10px;
+            font-family: 'Gill Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        Trabalhando com Dados v2.0
+    </h1>
+    <button onclick="cliq()">
+        Clique para começar
+    </button>
+    <div>Texto</div>
+    <script>
+        function cliq() {
+            var btn = document.querySelector('button')
+            var divi = document.querySelector('div')
+            var text = prompt('Qual o seu nome?')
+
+            divi.innerHTML = `Olá <strong>${text}</strong>, você realizou o desafio.`
+        }
+    </script>
+</body>
+
+</html>

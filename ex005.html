@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex005</title>
+    <style>
+        body {
+            background: #606060;
+            font-size: 20px;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 10px;
+            margin: 8px;
+        }
+
+        div {
+            background: white;
+            border-radius: 10px;
+            width: 400px;
+            padding: 10px;
+            margin: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        Trabalhando com números
+    </h1>
+
+    <button onclick='calculo()'>
+        Clique para calcular
+    </button>
+
+    <div>
+        Resultado
+    </div>
+
+
+    <script>
+        function calculo() {
+            var btn = document.querySelector('button')
+            var text = document.querySelector('div')
+            var pas = Number(prompt('Digite aqui: '))
+
+            var dob = pas * 2
+            var div = pas / 2
+
+            text.innerText = `O dobro de ${pas} é ${dob} e a metade é ${div}!`
+
+        }
+    </script>
+</body>
+
+</html>
